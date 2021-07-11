@@ -5,44 +5,8 @@
 <br>
 
 ### 1. What is the diffference between the React's `function` components and `class` components ?
-<br>
-
-#### Function components
-
-  
-   [Function components](https://reactjs.org/docs/components-and-props.html#function-and-class-components) have `props`  parameter, and they don't have `render`  or lifecycle methods.		
-
-   That’s the reason why they are called functional stateless components.		
-
-   [Function components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)  `return` a JSX string.
-
-
-<br>
-
-#### Class components
-   
-
-   Class components have `state` and `props`.
-
-   Class components have `render()` method which renders the JSX.
-
-
-<br>
 
 ### 2.  What is the component `state` ?
-
-   
-
-   The `state` is an  *object*  defined inside of the React `class` component. 
-
-   React `class`  components have React's built-in method `setState()` we must use to update the `state`.
-   
-   React's built-in `setState()` method triggers *re-rendering of the DOM* when state is changed.
-
-   
-   Only the `class` component itself can define the `state` (object) or change it's existing `state` through [`this.setState()`](https://reactjs.org/docs/state-and-lifecycle.html#using-state-correctly). 
-
-
 
 <br>
 
@@ -51,15 +15,14 @@
 ##### Task 1.
 Using the npm package [create-react-app](https://facebook.github.io/create-react-app/docs/getting-started) create new project named `react-state-example`. 
 Inside off the `src` directory create a new directory `components` to store your new components.
-Create file `src/components/User.js` and update the `src/App.js`, as per the code in this gist.
+Create file `src/components/Home.js` and update the `src/App.js`, as per the code in this gist.
 
 ##### Task 2.
-Add additional property `username: 'YOUR NAME'` to the `state` of the root component (`App.js`).
-Pass this value as the prop and display it in an additional `<h2>` tag in the `<User />` component so that it says : 'Welcome to YOUR NAME'
+Add additional property `bootcamp: 'Rookies'` to the `state` of the root component (`App.js`).
+Pass this value as the prop and display it in an additional `<h2>` tag in the `<Home />` component so that it says : 'Welcome to Rookies'
 
 ##### Task 3.
-Create a new class component `Navbar.js`, which has a `state` with one property `currentTab: 'home'` and a prop `username: 'YOUR NAME'`.
-Display this value in the `<p>` tag which will be showing in the navbar.
+Create a new class component `Navbar.js`, which has a `state` with one property `username: 'YOUR NAME'`. Display this value in the `<p>` tag which will be showing in the navbar.
 You can use the below snippet for your component elements.
 When done, `import` the `Navbar` component in `App.js` component and place it as the first element so that it displays on the top of the page.
 
@@ -107,14 +70,35 @@ div.nav-details > * {
 
 <br>
 
+### 1. What is the order lifecycles in ReactJS ?
+
+### 2.  What is the difference between React's `handling events` vs HTML `handling events`?
+
+<br>
+
 ## Exercise
 
 ##### Task 1.
-
+Add another state `time: new Date().toLocaleTimeString()` to component `Home.js`. Create a lifecycle `componentDidMount()` and update the value of new state using `this.setState({ time: new Date().toLocaleTimeString() })` for **an interval of 1 second**. Display the value of new state next to the welcome header as: 'Welcome to Rookies. It is 12:26:48 PM'
 
 ##### Task 2.
-Add additional property `bootcamp: 'Ironhack'` to the `state` of the root component (`App.js`).
-Pass this value as the prop and display it in an additional `<h2>` tag in the `<User />` component so that it says : 'Welcome to Ironhack'
+Add an additional `<button onClick={() => clickGame()}> Clicky Game</button>` in `src/components/Home.js`. Edit the `clickGame()` method in component `Home.js`, with every **3 clicks**, alert the message `Fizz`, with every **5 clicks**, alert the message `Buzz`, with every **15 clicks**, alert the message `FizzBuzz`.
+
+[**Hint**] 
+
+- Add new state `clickedTime: 0` in component `Home.js`. Every time the `<button>` is clicked, update the value of `clickedTime` to `+1`.
+
+- To show the alert. Add `alert("Hello! I am an alert box!!");` to `clickGame()` like the below snippet.
+
+```
+  ...
+  
+  clickGame() {
+    ...
+    alert("Hello! I am an alert box!!");
+  }
+  
+```
 
 <br>
 
