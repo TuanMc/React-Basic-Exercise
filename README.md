@@ -270,4 +270,32 @@ Finally, add new record to the `<table>` body.
   }
 ```
 
+## State Management
+
 <br>
+
+### 1.  What is state management for?
+
+### 2.  What is the difference between `Context-Provider` and `Redux`?
+
+<br>
+
+## Exercise
+
+##### Task 1.
+Create new component `src/components/Login.js` and assign it to a route `/login`. Use HTML form (or [**reactstrap form**](https://reactstrap.github.io/components/form/)) to create a login form with 2 fields `username` and `password` and a submit button.
+
+When done, create `users.json` file in `src` with the content below:
+
+```json
+   [
+       {
+           "username": "YOUR_USERNAME",
+           "password": "YOUR_PASSWORD" 
+       }
+   ]
+```
+
+##### Task 2.
+Continue to implement the method `handleLogin()` in `Login.js` component after user submit the form. Check whether the values of `username` and `password` from login form matches with any values from `users.json` (**Hint** you can use `fetch()` or `axios` to read the list of available users in `users.json` file, then compare that users list with the `username` and `password` from login form using [`.includes()`](https://www.w3schools.com/jsref/jsref_includes_array.asp)). If user login successfully, redirect to `/home` route.
+
