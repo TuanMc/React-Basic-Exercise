@@ -297,5 +297,9 @@ When done, create `users.json` file in `src` with the content below:
 ```
 
 ##### Task 2.
-Continue to implement the method `handleLogin()` in `Login.js` component after user submit the form. Check whether the values of `username` and `password` from login form matches with any values from `users.json` (**Hint** you can use `fetch()` or `axios` to read the list of available users in `users.json` file, then compare that users list with the `username` and `password` from login form using [`.includes()`](https://www.w3schools.com/jsref/jsref_includes_array.asp)). If user login successfully, redirect to `/home` route.
+Continue to implement the method `handleLogin()` in `Login.js` component after user submit the form. If user login successfully, redirect to `/home` route. 
+
+[**Hint**] 
+
+- You can use `fetch()` or `axios` to read the list of available users in `users.json` file, then compare that users list with the `username` and `password` from login form using [`.includes()`](https://www.w3schools.com/jsref/jsref_includes_array.asp)). 
 
